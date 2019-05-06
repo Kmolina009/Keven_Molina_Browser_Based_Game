@@ -1,5 +1,6 @@
+// alert("it works");
 //Treating this as a rough draft
-alert("it works")
+
 /*---Constants---*/
 var players;
 /*----app's state(variable)----*/
@@ -17,12 +18,14 @@ var turn,  winner, score, playerHand,computerHand
 //check for winner(could trigger once there are no cards left)
 
 init ();
-var playerHand= [1,2,3,4,5,6,7,8,9,10,11,12,13,14,
-    1,2,3,4,5,6,7,8,9,10,11,12,13,14,];
-var cpuHand = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,
-    1,2,3,4,5,6,7,8,9,10,11,12,13,14];
+
 
 function init(){
+    var playerHand= [1,2,3,4,5,6,7,8,9,10,11,12,13,14,
+                                1,2,3,4,5,6,7,8,9,10,11,12,13,14,];
+    var cpuHand = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,
+                            1,2,3,4,5,6,7,8,9,10,11,12,13,14];
+
     players= {
         player: 0,
         cpu: 0,
