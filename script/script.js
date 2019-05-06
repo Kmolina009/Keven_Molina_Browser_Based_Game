@@ -4,19 +4,18 @@ alert("it works");
 /*---Constants---*/
 var players;
 /*----app's state(variable)----*/
-var turn,  winner, score, playerHand,computerHand;
+var turn,  winner, score, playerHand,computerHand,playerPile,cpuPile;
 
 /*---cached elements references---*/
 //count of player card pile to determine winner.
 
 /*---event listener---*/
 //player clicking their card.
-document.getElementById('player').addEventListener('click', cardFlip);
-var playerCardT=document.getElementById('p1-card').addEventListener();;
-var cpuCardT=document.getElementById('cpu-card').addEventListener();
-//player clikcing  the reset button.
-document.getElementsByTagName('button').addEventListener('click',init);
-document.getElementById('table').addEventListener() 
+document.getElementById('player').addEventListener('click', cardFlip);//player click event
+var playerCardT=document.getElementById('p1-card').addEventListener();//player card on table
+var cpuCardT=document.getElementById('cpu-card').addEventListener();//computer card on table
+document.getElementsByTagName('button').addEventListener('click',init);//reset button
+var table = document.getElementById('table').addEventListener()// table, if two values are present, function judge
 //player clicking start button/ note: DOM manipulation could allow them both to be the same.
 /*---functions---*/
 //"shuffle card deck.", assign cards to each player "randomly".
@@ -45,20 +44,30 @@ function init(){
             a.sort(() => Math.random()-0.5);
             return a
         };
-        cards(playerHand);
-        cards(cpuHand);
+        shuffle(playerHand);
+        shuffle(cpuHand);
 }
 //WIP
 function cardFlip(){
-      table.push()
+    // Element to table.
+    //cpu sends element to table.
+    let placeHolder=[];
+    table.push(i[0]);
+     //cpu sends element to table.but how can I get two elements sent
+     //The hands at play lose there current card
+     return table
+}
+cardFlip(playerHand); 
+cardFlip(cpuHand);
 
-}//on click, array element is pushed to table, while the player shifts elements.
-//prompt's cpu to do the same 
-var table = function cardJudge(a,b){
+function cardJudge(a,b){  //will need testing
+    //activates once there are two cards on table
     if(a>b){
-        
-    }
+        playerPile.push(a&&b)
+    } else {cpuPile.push(a&&b)}
 };
+
+//use reduce method to "tally" card value
 
 checkForWinner(){
     //conditional that  activates once there are no more cards
