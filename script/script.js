@@ -1,9 +1,9 @@
 //Treating this as a rough draft
-
+alert("it works")
 /*---Constants---*/
-players
+var players;
 /*----app's state(variable)----*/
-var turn,  winner, score, playerHand,computerHand, cDeck 
+var turn,  winner, score, playerHand,computerHand
 
 /*---cached elements references---*/
 //count of player card pile to determine winner.
@@ -17,6 +17,10 @@ var turn,  winner, score, playerHand,computerHand, cDeck
 //check for winner(could trigger once there are no cards left)
 
 init ();
+var playerHand= [1,2,3,4,5,6,7,8,9,10,11,12,13,14,
+    1,2,3,4,5,6,7,8,9,10,11,12,13,14,];
+var cpuHand = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,
+    1,2,3,4,5,6,7,8,9,10,11,12,13,14];
 
 function init(){
     players= {
@@ -32,19 +36,12 @@ function init(){
 
         //Have 52 cards in deck
         //shuffle deck
-        function shuffle(){
-            cDeck =[1,2,3,4,5,6,7,8,9,10,11,12,13,
-                1,2,3,4,5,6,7,8,9,10,11,12,13,
-                1,2,3,4,5,6,7,8,9,10,11,12,13,
-                1,2,3,4,5,6,7,8,9,10,11,12,13};
-
-            cDeck.sort(() =>Math.random()-0.5);
-                return cDeck
-        };//but can I pass it to the next phase?
-
-        //Randomly distribute 26 cards per player
-     cDeck.push(playerHand && computerHand)//figure out how to do it randomly   
-     
+        function shuffle (a){
+            a.sort(() => Math.random()-0.5);
+            return a
+        };
+        cards(playerHand);
+        cards(cpuHand);
 }
 //WIP
 function cardFlip(evt.target){
