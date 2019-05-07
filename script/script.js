@@ -1,10 +1,10 @@
 alert("it works");
-//Treating this as a rough draft
+//Main Goal: Link the events together
 
 /*---Constants---*/
 var players;
 /*----app's state(variable)----*/
-var turn,  winner, score, playerHand,computerHand,playerPile,cpuPile;
+var turn,  winner, score, playerHand,cpuHand,playerPile,cpuPile;
 
 /*---cached elements references---*/
 //count of player card pile to determine winner.
@@ -15,7 +15,7 @@ document.getElementById('player').addEventListener('click', cardFlip);//player c
 var playerCardT=document.getElementById('p1-card').addEventListener();//player card on table
 var cpuCardT=document.getElementById('cpu-card').addEventListener();//computer card on table
 document.getElementsByTagName('button').addEventListener('click',init);//reset button
-var table = document.getElementById('table').addEventListener()// table, if two values are present, function judge
+var table = document.getElementById('table').addEventListener(,cardJudge)// table, if two values are present, function judge
 //player clicking start button/ note: DOM manipulation could allow them both to be the same.
 /*---functions---*/
 //"shuffle card deck.", assign cards to each player "randomly".
@@ -51,27 +51,38 @@ function init(){
 function cardFlip(){
     // Element to table.
     //cpu sends element to table.
-    let placeHolder=[];
     table.push(i[0]);
-     //cpu sends element to table.but how can I get two elements sent
-     //The hands at play lose there current card
      return table
-}
-cardFlip(playerHand); 
+};
+ //cpu sends element to table.but how can I get two elements sent
 cardFlip(cpuHand);
 
-function cardJudge(a,b){  //will need testing
-    //activates once there are two cards on table
-    if(a>b){
-        playerPile.push(a&&b)
-    } else {cpuPile.push(a&&b)}
-};
+//The hands at play lose there current card
+function playedCard(i) {
+    i.splice(0,1);
+	return i
+  };
+playedCard(cardFlip());
+playedCard(cardFlip());
 
+  
+  function cardJudge(a){  //will need testing
+    //activates once there are two cards on table
+    if(a[0]>a[1]){
+        playerPile.push(a[0],a[1])
+    } else {cpuPile.push(a[0],a[1])
+    return a
+    }
+};
 //use reduce method to "tally" card value
 
 checkForWinner(){
-    //conditional that  activates once there are no more cards
-    //evaluates who has the greater total  between players
+    if(playerHand.length===0&&cpuHand.length===0){
+            
+    }
+    /*conditional that  activates once there are no more cards in either players hand
+    */
+    //evaluates who has the greater total sum between players
 }
 // function render (){
 
