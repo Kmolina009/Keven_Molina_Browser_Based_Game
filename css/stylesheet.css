@@ -38,19 +38,21 @@ border-radius: 10px;
     border-radius: 1%;    
 } 
  #player{
+    background-image: url(https://i.imgur.com/WKRRfje.png);
+    background-size: 110px, 156px;
     background-color: rgb(216, 170, 130);
-    width: 100px;
-    height: 150px;
+    width: 110px;
+    height: 156px;
     grid-column: 4;
     grid-row: 4;
 }
 
 #cpu{
     background-image: url(https://i.imgur.com/WKRRfje.png);
-    background-size: 100px, 150px;
+    background-size: 110px, 156px;
     background-color: bisque;
-    width: 100px;
-    height: 150px;
+    width: 110px;
+    height: 156px;
     grid-column: 4;
     grid-row: 2;
 }
