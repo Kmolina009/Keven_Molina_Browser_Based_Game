@@ -26,66 +26,58 @@ cardJudge(table.cards)()
 var cardImageP= {
     function(){ 
     switch(table.cards[0]){
-        case [0]===1:
+        case 1:
         'https://i.imgur.com/lR2kJlQ.png';
         break;
-        case [0]===2:
+        case 2:
         'https://i.imgur.com/br4Zus5.png';
         break;
-        case[0]===3:
+        case 3:
         'https://i.imgur.com/8wozF7N.png';
         break;
-        case[0]===4:
+        case 4:
         'https://i.imgur.com/mlF0qxO.png';
         break;
-        case[0]===5:
+        case 5:
         'https://i.imgur.com/41iFQ55.png';
         break;
-        case[0]===6:
+        case 6:
         'https://i.imgur.com/o3mJVDa.png';
         break;
-        case[0]===7:
+        case 7:
         'https://i.imgur.com/J5E2IGe.png';
         break;
-        case[0]===8:
+        case 8:
         'https://i.imgur.com/ZTqalsj.png';
         break;
-        case[0]===9:
+        case 9:
         'https://i.imgur.com/WTmdMSP.png';
         break;
-        case[0]===10:'https://i.imgur.com/hdkuj2g.png';
+        case 10:'https://i.imgur.com/hdkuj2g.png';
         break;
-        case[0]===11:
+        case 11:
         'https://i.imgur.com/AKcxW92.png';
         break;
-        case[0]===12:
+        case 12:
         'https://i.imgur.com/lTD1h7O.png';
         break;
-        case[0]===13:
+        case 13:
         'https://i.imgur.com/4HyHRwb.png';
+        default:
+        'https://i.imgur.com/WKRRfje.png';
         
     }
     }
 };
-//count of player card pile to determine winner.
-/*---event listener---*/
-//player clicking their card.
 
 document.getElementById('player').addEventListener('click',function(){
     cardFlip(playerHand)
     });
-
 var msg = document.getElementById("msg");
-var playerCardT=document.getElementById('p1-card').src= cardImageP();//player card on table//figure out what's needed
+var playerCardT=document.getElementById('p1-Card').style.backgroundImage=`url${cardImageP}`;//player card on table
 var cpuCardT=document.getElementById('cpu-card').addEventListener();//computer card on table
 
 document.getElementsByTagName('button').addEventListener('click',init);//reset button
-
-// var table = document.getElementById('table').addEventListener(onload,cardJudge)// table, if two values are present, function judge
-
-//player clicking start button/ note: DOM manipulation could allow them both to be the same.
-/*---functions---*/
-//"shuffle card deck.", assign cards to each player "randomly".
 
 function cardFlip(arr){
     // Element to table.
@@ -133,16 +125,10 @@ function cardFlip(arr){
     } else{
         msg.innerHTML = "It's a Draw"
     }
-    //but does it work
+   
 };
 init ();
 function init(){
     shuffle(playerHand);
     shuffle(cpuHand);
-console.log(cpuFlip);
-console.log(cpuHand);
-console.log(cpuPile);
-console.log(table.cards);
-console.log(playerHand);
-console.log(playerPile);
 }
