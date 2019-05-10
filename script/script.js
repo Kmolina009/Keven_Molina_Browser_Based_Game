@@ -8,12 +8,12 @@ var winner, score, playerHand,cpuHand,playerPile,cpuPile,table
 /*---cached elements references---*/
 
 playerHand= [1,2,3,4,5,6,7,8,9,10,11,12,13,14,
-                    1,2,3,4,5,6,7,8,9,10,11,12,13,14,];
+            1,2,3,4,5,6,7,8,9,10,11,12,13];
     
 
 playerPile=[];
 cpuHand = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,
-1,2,3,4,5,6,7,8,9,10,11,12,13,14];
+            1,2,3,4,5,6,7,8,9,10,11,12,13];
 cpuPile=[];
 
 table = {
@@ -23,17 +23,60 @@ cardJudge(table.cards)()
         }  
     }
 };
-
+var cardImageP= {
+    function(){ 
+    switch(table.cards[0]){
+        case [0]===1:
+        'https://i.imgur.com/lR2kJlQ.png';
+        break;
+        case [0]===2:
+        'https://i.imgur.com/br4Zus5.png';
+        break;
+        case[0]===3:
+        'https://i.imgur.com/8wozF7N.png';
+        break;
+        case[0]===4:
+        'https://i.imgur.com/mlF0qxO.png';
+        break;
+        case[0]===5:
+        'https://i.imgur.com/41iFQ55.png';
+        break;
+        case[0]===6:
+        'https://i.imgur.com/o3mJVDa.png';
+        break;
+        case[0]===7:
+        'https://i.imgur.com/J5E2IGe.png';
+        break;
+        case[0]===8:
+        'https://i.imgur.com/ZTqalsj.png';
+        break;
+        case[0]===9:
+        'https://i.imgur.com/WTmdMSP.png';
+        break;
+        case[0]===10:'https://i.imgur.com/hdkuj2g.png';
+        break;
+        case[0]===11:
+        'https://i.imgur.com/AKcxW92.png';
+        break;
+        case[0]===12:
+        'https://i.imgur.com/lTD1h7O.png';
+        break;
+        case[0]===13:
+        'https://i.imgur.com/4HyHRwb.png';
+        
+    }
+    }
+};
 //count of player card pile to determine winner.
 /*---event listener---*/
 //player clicking their card.
 
 document.getElementById('player').addEventListener('click',function(){
     cardFlip(playerHand)
-    })
+    });
 
-var playerCardT=document.getElementById('p1-card').addEventListener();//player card on table
-
+var msg = document.getElementById("msg");
+var playerCardT=document.getElementById('p1-card').src= cardImageP();//player card on table//figure out what's needed
 var cpuCardT=document.getElementById('cpu-card').addEventListener();//computer card on table
 
 document.getElementsByTagName('button').addEventListener('click',init);//reset button
@@ -63,11 +106,8 @@ function cardFlip(arr){
      }}
  
  //The hands at play lose there current card
-// function playedCard(i) {
-//     i.splice(0,1);
-//      return i
-//   };
- function cardJudge(table){  //will need testing
+
+ function cardJudge(table){  
     //activates once there are two cards on table
     if(table.cards[0]>table.cards[1]){
         playerPile.push(table.cards[0],table.cards[1])
@@ -84,73 +124,25 @@ function cardFlip(arr){
         getWinner();
     }    
  }
-    /*conditional that  activates once there are no more cards in either players hand
-    
-*/
+    //conditional that  activates once there are no more cards in either players hand
  function  getWinner(){
     if(playerPile>cpuPile){
-        alert("You Win")
+        msg.innerHTML= "You Win"
     }else if(cpuPile>playerPile){
-        alert("Try Again")
+       msg.innerHTML = "Try Again"
     } else{
-        alert("It's a Draw");
+        msg.innerHTML = "It's a Draw"
     }
-    //evaluates who has the greater total sum between players
+    //but does it work
 };
-
-
-
-// playedCard(cardFlip());
-// playedCard(cardFlip());
-
 init ();
-
 function init(){
     shuffle(playerHand);
     shuffle(cpuHand);
-
-    players= {
-        player: 0,
-        cpu: 0,
-        tie : 0,
-    }
-           };
-           
-           console.log(cpuFlip);
- console.log(cpuHand);
+console.log(cpuFlip);
+console.log(cpuHand);
 console.log(cpuPile);
 console.log(table.cards);
 console.log(playerHand);
-console.log(playerPile);// table, if two values are present, function judge}
-    //Winner is determined by the greater total of pile
-
-       
-/*Another version that involves pushing things to the table
-That prompts the cpu to push
-function cardFlip(i){
-   // Element to table.
-   //cpu sends element to table.
-   table.cards.push(i[0]);
-   if(table.cards.push){
-   }
-    return table
-};
-*/
-      
-
-//WIP
-
-
-
-
-
-
- 
-//use reduce method to "tally" card value
-
-
-   //evaluates who has the greater total sum between players
-
-// function render (){
-
-// }
+console.log(playerPile);
+}

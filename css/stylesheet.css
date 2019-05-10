@@ -14,7 +14,6 @@ h4{
     margin: 0 auto 1vmin auto;
 }
 h1, h4 {
-    
     text-align: center;
 }
 button{
@@ -23,11 +22,6 @@ font-size: 24px;
 padding: 10px;
 border-radius: 10px;
 }
-.score{
-    text-align: center
-    text-justify: center;
-    font-family: Arial, Helvetica, sans-serif;
-}   
 
 #container { 
     display: grid;
@@ -73,7 +67,6 @@ border-radius: 10px;
     margin: 0px 0px 40px 0px ;/*is it possible to adjust the position  more on the table*/
 }
 #cpu-Card{
-    background-image: url(image-assets/Card Back 2.png);
     background-color: black;
     width: 100px;
     height: 150px;
@@ -124,4 +117,7 @@ border-radius: 10px;
     grid-column-start: 3;
     grid-column-end: 6;
     border-radius: 5% ;
+}
+#msg{
+    justify-content: center;
 }
